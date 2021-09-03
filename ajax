@@ -1,1 +1,21 @@
 - ajax uses XHR API to handle request from the server
+- needs to be in a server to run
+
+request = new XMLHttpRequest();
+request.open('GET', 'data.txt', false)
+request.send();
+if(request.status === 200) {
+   document.writeln(request.responseText);
+}
+
+
+# scripts for backwards compatibility
+
+```
+var request;
+if (window.XMLHttpRequest) {
+  request = new XMLHttpRequest();
+} else {
+  request = new ActiveXObject("Microsoft.XMLHttp")
+}
+```
