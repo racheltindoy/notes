@@ -62,6 +62,7 @@ request.send();
 
 # JSON.parse(request.responseText) to parse JSON files
 
+```
 var request;
 if(window.XMLHttpRequest) {
     request = new XMLHttpRequest();
@@ -84,4 +85,4 @@ request.onreadystatechange = function() {
      }
 }
 request.send();
-
+```
