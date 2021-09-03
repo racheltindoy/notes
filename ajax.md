@@ -1,0 +1,32 @@
+- ajax uses XHR API to handle request from the server
+- needs to be in a server to run
+
+
+# scripts for backwards compatibility
+
+```
+var request;
+if (window.XMLHttpRequest) {
+  request = new XMLHttpRequest();
+} else {
+  request = new ActiveXObject("Microsoft.XMLHttp")
+}
+```
+
+# assigning result to an html element
+```
+var request;
+if(window.XMLHttpRequest) {
+    request = new XMLHttpRequest();
+} else {
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+}
+request.open('GET', 'data.txt', false)
+request.onreadystatechange = function() {
+    if((request.readyState === 4) && (request.status === 200)) {
+       var modify = document.getElementById('update');
+       modify.innerHTML = request.responseText;
+     }
+}
+request.send();
+```
